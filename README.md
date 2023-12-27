@@ -3,7 +3,9 @@ A home assistant automation to set the octopus inteligent/myenergi zappi integra
 
 When the car is plugged inm the Plug status changes from 'EV Disconnected' to 'EV Connected'.
 
-After a 3 minute delay, the automation will read the the car's SoC and set the Octopus charge limit value to maxVal - SoC. You can set maxVal to the total limit you require. ie 80%.
+After a 3 minute delay, the automation will read the the car's SoC and set the Octopus charge limit value to maxVal - SoC. 
+
+maxVal is now set directly from the cars own charge limit value.
 
 Your mobile phone will recieve a notification with the requested charge value.
 
