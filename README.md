@@ -25,8 +25,9 @@ Change the 'DEVICE ID' tags to your specific devices.
 You'll need to find these entities...
 
 > Myenergi zappi plug status
-
 > Octopus charge limit
+> Car battery level
+> Car bettery charge limit
 
 and change sensor.enyaq_battery_level to an appropriate sensor for your cars' battery State of Charge.
 
