@@ -1,0 +1,28 @@
+alias: "Detect Zappi plugged in "
+description: ""
+trigger:
+  - platform: state
+    entity_id:
+      - sensor.myenergi_zappi_door_plug_status
+    from: EV Disconnected
+    to: EV Connected
+condition: []
+action:
+  - service: notify.mobile_app_<DEVICE ID>
+    data:
+      title: Zappi
+      message: Car Plugged In
+  - delay:
+      hours: 0
+      minutes: 3
+      seconds: 0
+      milliseconds: 0
+  - service: number.set_value
+    target:
+      entity_id: number.octopus_energy_<DEVICE ID>_intelligent_charge_limit
+    data:
+      value: >
+        {% set maxVal = 80 %} {% set state = maxVal -
+        states('sensor.enyaq_battery_level') | int %}  {{ min(maxVal,
+        max(state,10)) }}
+mode: single
