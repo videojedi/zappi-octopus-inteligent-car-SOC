@@ -30,7 +30,7 @@ You'll need to find these entities...
 > 
 > Car battery level
 > 
-> Car bettery charge limit
+> Car battery charge limit
 
 and change sensor.enyaq_battery_level to an appropriate sensor for your cars' battery State of Charge.
 
