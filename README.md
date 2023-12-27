@@ -10,19 +10,21 @@ Your mobile phone will recieve a notification with the requested charge value.
 If the required amount is less than 10%, then a miniumum of 10% will be requested.
 
 
-Installation.
+## Installation.
 
-Requires the Myenergi, Octopus and Skoda integrations to be installed and correctly communicting.
+Requires the Myenergi, Octopus and Skoda (or other car) integrations to be installed and correctly communicating.
 
-Create a new automation. Click on the three dots (Top Right) and select Edit in YAML.
+Create a new automation. Click on the three dots (Top Right) and select 'Edit in YAML'.
 
-Copy and paste the code from here.
+Copy and paste the code from the example automation.
 
-Change the <DEVICE ID> tags to your specific devices. 
+Change the 'DEVICE ID' tags to your specific devices. 
 
-Myenergi zappi plug status
+You'll need to find these entities...
 
-Octopus charge limit
+> Myenergi zappi plug status
+
+> Octopus charge limit
 
 and change sensor.enyaq_battery_level to an appropriate sensor for your cars' battery State of Charge.
 
