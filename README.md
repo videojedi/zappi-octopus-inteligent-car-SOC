@@ -32,6 +32,6 @@ You'll need to find these entities...
 > 
 > Car battery charge limit
 
-and change sensor.enyaq_battery_level to an appropriate sensor for your cars' battery State of Charge.
+
 
 Save the automation.
