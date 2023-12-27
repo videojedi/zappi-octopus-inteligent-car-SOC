@@ -6,5 +6,7 @@ Requires the Myenergi, Octopus and Skoda integrations to be installed and correc
 
 When the car is plugged inm the Plug status changes from 'Not Connected' to 'Connected'.
 Your mobile phone will recieve a notification
-After a 3 minute delay, the automation will read the the car's SOC and set the Octopus charge limit value to 80 - SoC.
+After a 3 minute delay, the automation will read the the car's SOC and set the Octopus charge limit value to maxVal - SoC. You can set maxVal to the total limit you require. ie 80%.
+
+or if the required amount is less than 10%, then a miniumum of 10% will be requested.
 
