@@ -19,9 +19,9 @@ action:
       entity_id: number.octopus_energy_<DEVICE ID>_intelligent_charge_limit
     data:
       value: >
-        {% set maxVal = 80 %} {% set state = maxVal -
-        states('sensor.enyaq_battery_level') | int %}  {{ min(maxVal,
-        max(state,10)) }}
+        {% set maxVal = states('sensor.enyaq_minimum_charge_level') | int %} 
+        {% set state = maxVal - states('sensor.enyaq_battery_level') | int %}
+        {{ min(maxVal, max(state,10)) }}
   - service: notify.mobile_app_<DEVICE ID>
     data:
       title: Zappi
