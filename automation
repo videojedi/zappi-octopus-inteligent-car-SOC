@@ -1,9 +1,9 @@
-alias: "Detect Zappi plugged in "
-description: ""
+alias: "Detect Zappi plugged in"
+description: "Set Octopus Intelliegent charge request accordiing to car SoC automatically"
 trigger:
   - platform: state
     entity_id:
-      - sensor.myenergi_zappi_door_plug_status
+      - sensor.myenergi_zappi_<ZAPPI NAME>_plug_status
     from: EV Disconnected
     to: EV Connected
 condition: []
