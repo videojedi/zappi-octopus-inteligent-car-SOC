@@ -1,2 +1,10 @@
 # zappi-octopus-inteligent-car-SOC
 A home assistant automation to set the octopus inteligent/myenergi zappi integration to the correct required charge amount, based on the car SOC.
+
+Requires the Myenergi, Octopus and Skoda integrations to be installed and correctly communicting.
+
+
+When the car is plugged inm the Plug status changes from 'Not Connected' to 'Connected'.
+Your mobile phone will recieve a notification
+After a 3 minute delay, the automation will read the the car's SOC and set the Octopus charge limit value to 80 - SoC.
+
