@@ -1,22 +1,19 @@
-alias: "Detect Zappi plugged in"
-description: "Set Octopus Intelliegent charge request accordiing to car SoC automatically"
+alias: Automatic IO charge request
+description: Set Octopus Intelliegent charge request accordiing to car SoC automatically
 trigger:
   - platform: state
     entity_id:
-      - sensor.myenergi_zappi_<ZAPPI NAME>_plug_status
+      - sensor.myenergi_zappi_<DEVICE ID>_plug_status
     from: EV Disconnected
     to: EV Connected
 condition: []
 action:
-  - service: notify.mobile_app_<DEVICE ID>
-    data:
-      title: Zappi
-      message: Car Plugged In
   - delay:
       hours: 0
       minutes: 3
       seconds: 0
       milliseconds: 0
+    enabled: true
   - service: number.set_value
     target:
       entity_id: number.octopus_energy_<DEVICE ID>_intelligent_charge_limit
@@ -25,4 +22,10 @@ action:
         {% set maxVal = 80 %} {% set state = maxVal -
         states('sensor.enyaq_battery_level') | int %}  {{ min(maxVal,
         max(state,10)) }}
+  - service: notify.mobile_app_<DEVICE ID>
+    data:
+      title: Zappi
+      message: >-
+        Car plugged in and IO requested charge is : {{
+        states('number.octopus_energy_<DEVICE ID>_intelligent_charge_limit') }} %
 mode: single
