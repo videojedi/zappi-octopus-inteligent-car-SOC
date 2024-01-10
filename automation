@@ -3,9 +3,11 @@ description: Set Octopus Intelliegent charge request accordiing to car SoC autom
 trigger:
   - platform: state
     entity_id:
-      - sensor.myenergi_zappi_<DEVICE ID>_plug_status
+      - sensor.myenergi_zappi_door_plug_status
     from: EV Disconnected
-    to: EV Connected
+    to:
+      - EV Connected
+      - Charging
 condition: []
 action:
   - delay:
